@@ -16,7 +16,8 @@ limitations under the License.
 
 package v1alpha1
 
-import (
+import 
+(
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -25,7 +26,8 @@ import (
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 
 // CustomSecretSpec defines the desired state of CustomSecret
-type CustomSecretSpec struct {
+type CustomSecretSpec struct 
+{
 	SecretName        string            `json:"secretName,omitempty"`
 	StringData        map[string]string `json:"stringData,omitempty"`
 	Data              map[string][]byte `json:"data,omitempty"`
@@ -38,7 +40,8 @@ type CustomSecretSpec struct {
 //+kubebuilder:object:root=true
 
 // CustomSecret is the Schema for the customsecrets API
-type CustomSecret struct {
+type CustomSecret struct 
+{
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 
@@ -48,12 +51,14 @@ type CustomSecret struct {
 //+kubebuilder:object:root=true
 
 // CustomSecretList contains a list of CustomSecret
-type CustomSecretList struct {
+type CustomSecretList struct 
+{
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
 	Items           []CustomSecret `json:"items"`
 }
 
-func init() {
+func init() 
+{
 	SchemeBuilder.Register(&CustomSecret{}, &CustomSecretList{})
 }
